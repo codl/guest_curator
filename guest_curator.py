@@ -192,15 +192,12 @@ class GuestCurator(mastodon.StreamListener):
                 # time.sleep(next_post_at - time.time + 0.1)
                 #if thread_must_stop.wait(next_post_at - time.time()):
                 if thread_must_stop.wait(3):
-                    print("thread stopped externally")
                     return
-                print(next_post_at - time.time())
             with self.lock:
                 status = self.queue.pop()
                 if not status:
                     return self.reset()
                 try:
-                    print("boostin")
                     self.api.status_reblog(status)
                     self.next_post_at += random.choice(self.post_delay) * 60
                 except Exception as e:
@@ -208,7 +205,6 @@ class GuestCurator(mastodon.StreamListener):
                     raise e
                     pass
                 if len(self.queue) == 0:
-                    print("thread stopping on its own")
                     return self.reset()
 
     def on_update(self, status):
@@ -291,8 +287,6 @@ def run():
             client_secret=config.get('client_secret'),
             access_token=config.get('access_token'),
             api_base_url=config.get('instance'))
-
-    print("starting...")
 
     try:
         guest_curator = GuestCurator(api)

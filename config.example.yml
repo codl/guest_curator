@@ -1,0 +1,5 @@
+instance: https://mastodon.social
+
+client_key: aaa
+client_secret: bbb
+access_token: ccc

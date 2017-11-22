@@ -7,6 +7,7 @@ import random
 import threading
 from statistics import mean
 import time
+import argparse
 
 HELP_TEXT = """
 
@@ -279,8 +280,16 @@ class GuestCurator(mastodon.StreamListener):
 
 
 def run():
-    with open('config.yml') as f:
-        config = yaml.load(f)
+    parser = argparse.ArgumentParser(
+            description='Guest Curator Bot.')
+    parser.add_argument(
+            '--config', '-c', type=argparse.FileType('r'),
+            default='config.yml',
+            help='config file location')
+
+    args = parser.parse_args()
+    config = yaml.load(args.config)
+    args.config.close()
 
     api = mastodon.Mastodon(
             client_id=config.get('client_key'),

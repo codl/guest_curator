@@ -6,7 +6,7 @@
 
     python -V
 
-should be 3.3+
+should be 3.3+ <small>though really i havent tested anything else than 3.6</small>
 
 ### install dependencies
 

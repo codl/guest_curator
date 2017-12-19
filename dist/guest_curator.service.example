@@ -1,0 +1,11 @@
+[Unit]
+Description=guest curator mastodon bot
+
+[Install]
+WantedBy=multi-user.target
+
+[Service]
+Type=simple
+User={YOUR LINUX USER NAME HERE}
+WorkingDirectory={ABSOLUTE PATH TO WHERE YOU INSTALLED GUEST CURATOR HERE}
+ExecStart={YEP THAT DIRECTORY AGAIN}/venv/bin/python guest_curator.py

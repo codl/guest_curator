@@ -4,8 +4,8 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-"mastodon.py" = { git = 'https://github.com/codl/Mastodon.py.git', ref = 'guest-curator' }
-pyyaml = "*"
+"mastodon.py" = ">=1.2"
+pyyaml = ">=3.12"
 
 
 [dev-packages]

@@ -9,7 +9,7 @@ The bot is entirely controlled by DMing oneself. It was my first attempt at givi
 bot a friendly UI and I think I did OK for a first try 😊 Here is [a video of it in action][v].
 
 [curator]: https://mastodon.art/@Curator
-[v]: https://media.chitter.xyz/media_attachments/files/000/109/777/original/a0ec40e4c3ccde60.mp4
+[v]: https://f.codl.fr/1901/a0ec40e4c3ccde60.mp4
 
 ## quick and dirty instructions
 
